@@ -1,0 +1,76 @@
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+    "alembic/versions",
+
+]
+
+# Same as Black.
+line-length = 120
+indent-width = 4
+
+# Assume Python 3.9
+target-version = "py310"
+
+[lint]
+select = [
+    "E",  # Все ошибки (например, E101, E110, E123)
+    "W",  # Все предупреждения (например, W291, W503)
+    "F",  # Форматирование (например, F401)
+    "C",  # Кодировка (например, C901)
+    "D",  # Проверки на докстринги
+    "T",  # Проверки на аннотации типов
+]
+ignore = [
+    "D100",  # Игнорировать отсутствие докстринга для модуля
+    "D101",  # Игнорировать отсутствие докстринга для функции
+    "D104",  # Игнорировать отсутствие докстринга для неиспользуемых функций
+    "D203",  # Игнорировать требование пустой строки перед классом (если хотите, чтобы перед классом не было пустой строки)
+    "D213",  # Игнорировать правило на пустую строку после первой в многострочном докстринге,
+    "D107",  # Missing docstring in `__init__`
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
